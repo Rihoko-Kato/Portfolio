@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rihoko Kato | Portfolio 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 全体の基本設定 */
+        :root {
+            --primary-blue: #3A68B1; /* Indexや見出しの青 */
+            --bg-light-blue: #F0F6FA; /* 背景の薄い青 */
+            --text-main: #333333;
+            --text-light: #666666;
+            --accent-orange: #F29C38; /* Indexの線のアクセントカラー */
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+        }
+
+        /* セクション共通 */
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* --- 01. HERO (表紙) --- */
+        .hero {
+            /* クラゲの画像を背景に設定する場合はここを変更 */
+            background-color: #5B72A4; 
+            background-image: linear-gradient(135deg, rgba(91,114,164,0.8) 0%, rgba(131,118,172,0.8) 100%);
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 50px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .hero-top {
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-align: center;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            margin-bottom: 50px;
+        }
+
+        .hero-vertical-text {
+            writing-mode: vertical-rl;
+            position: absolute;
+            right: 10%;
+            top: 20%;
+            font-size: 1.5rem;
+            letter-spacing: 0.3em;
+            border-left: 1px solid white;
+            padding-left: 20px;
+        }
+
+        /* --- 02. INDEX --- */
+        .index-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            padding: 100px 0;
+        }
+
+        .index-circle {
+            background: linear-gradient(135deg, #4278FF 0%, #2950C2 100%);
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(66, 120, 255, 0.3);
+        }
+
+        .index-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .index-list li {
+            font-size: 1.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .index-list li:hover {
+            color: var(--accent-orange);
+            transform: translateX(10px);
+        }
+
+        /* --- 03. ABOUT ME --- */
+        .about-header {
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+        }
+
+        .about-header span {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .about-header h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+        }
+
+        .about-left {
+            flex: 1;
+            position: relative;
+        }
+
+        /* りほこの写真用プレースホルダー */
+        .profile-img-wrapper {
+            width: 100%;
+            height: 500px;
+            background-color: var(--bg-light-blue);
+            border-radius: 40px 100px 40px 40px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            margin-top: 20px;
+        }
+
+        .profile-name-ja {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .profile-name-en {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .about-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .about-block h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .about-block-title {
+            color: var(--accent-orange);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .about-block p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .skills-list {
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-top">
+            <p>A SINGLE SPARK</p>
+            <p>IN THE DEEP</p>
+            <p style="margin-top: 10px;">Rihoko Kato</p>
+        </div>
+        
+        <div class="hero-vertical-text">
+            手法を選ばず、地道につくる
+        </div>
+
+        <div>
+            <p style="text-align: right; font-size: 1.5rem; margin-bottom: -10px;">2026</p>
+            <h1 class="hero-title">PORTFOLIO</h1>
+        </div>
+    </header>
+
+    <section class="index-container">
+        <div class="index-circle">
+            Index
+        </div>
+        <ul class="index-list">
+            <li>#001 About me</li>
+            <li>#002 Picapon</li>
+            <li>#003 DAIJOBU:</li>
+            <li>#004 Putica</li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <div class="about-header">
+            <span>#001</span>
+            <h2>About me</h2>
+        </div>
+
+        <div class="about-content">
+            <div class="about-left">
+                <div class="profile-img-wrapper">
+                    <img src="profile.jpg" alt="Rihoko Kato">
+                </div>
+                <div class="profile-info">
+                    <p style="color: var(--primary-blue); margin-bottom: 10px;">
+                        法政大学<br>
+                        デザイン工学部<br>
+                        システムデザイン学科<br>
+                        Affective Design Lab
+                    </p>
+                    <p class="profile-name-ja">加藤里歩子</p>
+                    <p class="profile-name-en">Rihoko Kato</p>
+                </div>
+            </div>
+
+            <div class="about-right">
+                <div class="about-block">
+                    <h3>UNIVERSITY</h3>
+                    <p class="about-block-title">新しい価値を持ったもの・システムを創造しデザインする工学</p>
+                    <p>3分野の専門性を総合的に取り入れ、モノづくりの上流から下流までを学び、様々な視点から価値創造を行う。</p>
+                </div>
+
+                <div class="about-block">
+                    <h3>LAB</h3>
+                    <p class="about-block-title">インタラクションを通じた感情の変化を捉える</p>
+                    <p>Affective Design というコンセプトを中心に、Interaction Design、UX Design、Service Design、Media Art、Speculative Art を含む幅広い産業・研究・芸術分野において活動を展開。</p>
+                </div>
+
+                <div class="about-block">
+                    <h3>PART-TIME JOB</h3>
+                    <p class="about-block-title">周囲の状況を鋭く観察し、今何が必要かを考えて動く</p>
+                    <p>大学1年生から現在まで続けているファストフード店でシフトマネージャーを務めている。忙しい時ほど率先して動き、周囲が自然と動きたくなる環境づくりを実践。相手の視点に立った細やかなサポートで、後輩から信頼される関係性を構築。</p>
+                </div>
+
+                <div class="about-block">
+                    <h3>SKILLS</h3>
+                    <p class="skills-list">
+                        Illustrator / Photoshop / Premiere Pro / Figma / Canva<br>
+                        Fusion 360 / VS Code / GitHub<br>
+                        PowerPoint / Excel
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
