@@ -40,62 +40,54 @@
 
         /* --- 01. HERO (表紙) --- */
         .hero {
-            background: #f6f1ea;
+            background: #fbf5ef;
             min-height: 100vh;
             color: white;
             padding: 0;
             box-sizing: border-box;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
 
         .hero-stage {
             position: relative;
-            width: min(1280px, calc(100vw - 56px));
-            height: 100vh;
-            margin: 0 auto;
+            width: 1000px;
+            height: 640px;
+            max-width: 100vw;
         }
 
         .hero-bg {
             position: absolute;
-            background: #a7b4d6;
+            background: #95a3cb;
         }
 
         .hero-bg-main {
-            top: 52px;
-            left: 0;
-            width: min(62vw, 780px);
-            height: min(57vh, 540px);
-            background: #7d91c4;
-            box-shadow: 0 16px 40px rgba(60, 87, 149, 0.16);
+            display: none;
         }
 
         .hero-bg-title {
-            top: 240px;
-            left: 82px;
-            width: min(76vw, 900px);
-            height: min(40vh, 320px);
-            background: #93a2cd;
-            opacity: 0.92;
+            bottom: 60px;
+            left: 200px;
+            width: 800px;
+            height: 140px;
         }
 
         .hero-bg-side {
-            top: 78px;
-            right: 0;
-            width: min(20vw, 210px);
-            height: min(70vh, 680px);
-            background: #95a4cf;
-            opacity: 0.82;
+            top: 40px;
+            right: 40px;
+            width: 130px;
+            height: 520px;
         }
 
         .hero-image {
             position: absolute;
-            top: 52px;
-            left: 0;
-            width: min(62vw, 780px);
-            height: min(57vh, 540px);
-            z-index: 3;
-            overflow: hidden;
+            top: 20px;
+            left: 40px;
+            width: 680px;
+            height: 480px;
+            z-index: 2;
             background: #6f86bc;
         }
 
@@ -107,62 +99,81 @@
         }
 
         .hero-content {
-            position: relative;
+            position: absolute;
+            inset: 0;
             z-index: 4;
-            width: 100%;
-            height: 100vh;
+            pointer-events: none;
         }
 
         .hero-top {
             position: absolute;
-            top: 24px;
-            left: 24px;
-            font-size: 1.02rem;
+            top: 40px;
+            left: 55px;
+            font-size: 1.1rem;
             letter-spacing: 0.1em;
-            line-height: 1.25;
-        }
-
-        .hero-title {
-            font-size: clamp(5rem, 10vw, 7.9rem);
-            font-weight: 700;
-            letter-spacing: 0.16em;
-            text-align: center;
-            text-shadow: 0 10px 0 rgba(242, 156, 56, 0.55), 0 18px 28px rgba(42, 53, 90, 0.16);
-            line-height: 0.9;
+            line-height: 1.4;
+            font-weight: 300;
         }
 
         .hero-vertical-text {
             writing-mode: vertical-rl;
             position: absolute;
-            right: 32px;
-            top: 78px;
-            font-size: 1.25rem;
-            letter-spacing: 0.35em;
-            color: rgba(255, 255, 255, 0.95);
-            border-left: 1px solid rgba(255, 255, 255, 0.9);
-            padding-left: 22px;
-            height: 70vh;
+            right: 55px;
+            top: 80px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5em;
+            color: white;
+            height: 440px;
+            display: flex;
+            align-items: center;
+            line-height: 2;
+        }
+
+        .hero-vertical-text::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: white;
+        }
+        
+        .hero-vertical-text::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: white;
         }
 
         .hero-bottom {
             position: absolute;
-            left: 184px;
-            bottom: 2px;
-            z-index: 5;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
         }
 
         .hero-year {
             text-align: right;
-            font-size: 1.5rem;
-            margin-bottom: -8px;
-            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.4rem;
+            margin-bottom: -12px;
+            margin-right: 220px;
+            color: white;
         }
 
-        .hero-portfolio {
-            position: relative;
-            margin: 0;
+        .hero-title {
+            font-size: 7.5rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            padding-left: 0.22em;
             color: white;
-            z-index: 5;
+            text-shadow: 4px 4px 0px rgba(242, 156, 56, 0.7), 8px 8px 15px rgba(0,0,0,0.1);
+            line-height: 1;
+            margin: 0;
         }
 
         /* --- 02. INDEX --- */
@@ -318,17 +329,14 @@
                 <div class="hero-top">
                     <p>A SINGLE SPARK</p>
                     <p>IN THE DEEP</p>
-                    <p style="margin-top: 10px; font-size: 1rem;">Rihoko Kato</p>
-                </div>
+                <p style="margin-top: 15px; font-size: 1rem;">Rihoko Kato</p>
+            </div>
 
-                <div class="hero-vertical-text">
-                    手法を選ばず、<br>地道につくる
-                </div>
-
-                <div class="hero-bottom">
-                    <p class="hero-year">2026</p>
-                    <h1 class="hero-title hero-portfolio">PORTFOLIO</h1>
-                </div>
+            <div class="hero-vertical-text">
+                <div>手法を選ばず、<br>地道につくる</div>
+                <p class="hero-year">2026</p>
+                <h1 class="hero-title hero-portfolio">PORTFOLIO</h1>
+            </div>
             </div>
         </div>
     </header>
