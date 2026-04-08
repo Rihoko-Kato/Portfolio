@@ -49,6 +49,13 @@
             overflow: hidden;
         }
 
+        .hero-stage {
+            position: relative;
+            width: min(1280px, calc(100vw - 56px));
+            height: 100vh;
+            margin: 0 auto;
+        }
+
         .hero-bg {
             position: absolute;
             background: #a7b4d6;
@@ -56,27 +63,27 @@
 
         .hero-bg-main {
             top: 52px;
-            left: 54px;
-            width: min(67vw, 780px);
+            left: 0;
+            width: min(62vw, 780px);
             height: min(57vh, 540px);
             background: #7d91c4;
             box-shadow: 0 16px 40px rgba(60, 87, 149, 0.16);
         }
 
         .hero-bg-title {
-            top: 248px;
-            left: 108px;
-            width: min(82vw, 920px);
+            top: 240px;
+            left: 82px;
+            width: min(76vw, 900px);
             height: min(40vh, 320px);
             background: #93a2cd;
             opacity: 0.92;
         }
 
         .hero-bg-side {
-            top: 92px;
-            right: 34px;
-            width: min(23vw, 220px);
-            height: min(69vh, 670px);
+            top: 78px;
+            right: 0;
+            width: min(20vw, 210px);
+            height: min(70vh, 680px);
             background: #95a4cf;
             opacity: 0.82;
         }
@@ -84,8 +91,8 @@
         .hero-image {
             position: absolute;
             top: 52px;
-            left: 54px;
-            width: min(67vw, 780px);
+            left: 0;
+            width: min(62vw, 780px);
             height: min(57vh, 540px);
             z-index: 3;
             overflow: hidden;
@@ -108,9 +115,9 @@
 
         .hero-top {
             position: absolute;
-            top: 26px;
-            left: 28px;
-            font-size: 1.05rem;
+            top: 24px;
+            left: 24px;
+            font-size: 1.02rem;
             letter-spacing: 0.1em;
             line-height: 1.25;
         }
@@ -127,7 +134,7 @@
         .hero-vertical-text {
             writing-mode: vertical-rl;
             position: absolute;
-            right: 72px;
+            right: 32px;
             top: 78px;
             font-size: 1.25rem;
             letter-spacing: 0.35em;
@@ -139,8 +146,8 @@
 
         .hero-bottom {
             position: absolute;
-            left: 156px;
-            bottom: 0;
+            left: 184px;
+            bottom: 2px;
             z-index: 5;
         }
 
@@ -298,28 +305,30 @@
 <body>
 
     <header class="hero">
-        <div class="hero-bg hero-bg-main"></div>
-        <div class="hero-bg hero-bg-title"></div>
-        <div class="hero-bg hero-bg-side"></div>
+        <div class="hero-stage">
+            <div class="hero-bg hero-bg-main"></div>
+            <div class="hero-bg hero-bg-title"></div>
+            <div class="hero-bg hero-bg-side"></div>
 
-        <div class="hero-image">
-            <img src="images/表紙クラゲ2.jpg" alt="表紙クラゲ2">
-        </div>
-
-        <div class="hero-content">
-            <div class="hero-top">
-                <p>A SINGLE SPARK</p>
-                <p>IN THE DEEP</p>
-                <p style="margin-top: 10px; font-size: 1rem;">Rihoko Kato</p>
+            <div class="hero-image">
+                <img src="images/表紙クラゲ2.jpg" alt="表紙クラゲ2">
             </div>
 
-            <div class="hero-vertical-text">
-                手法を選ばず、<br>地道につくる
-            </div>
+            <div class="hero-content">
+                <div class="hero-top">
+                    <p>A SINGLE SPARK</p>
+                    <p>IN THE DEEP</p>
+                    <p style="margin-top: 10px; font-size: 1rem;">Rihoko Kato</p>
+                </div>
 
-            <div class="hero-bottom">
-                <p class="hero-year">2026</p>
-                <h1 class="hero-title hero-portfolio">PORTFOLIO</h1>
+                <div class="hero-vertical-text">
+                    手法を選ばず、<br>地道につくる
+                </div>
+
+                <div class="hero-bottom">
+                    <p class="hero-year">2026</p>
+                    <h1 class="hero-title hero-portfolio">PORTFOLIO</h1>
+                </div>
             </div>
         </div>
     </header>
