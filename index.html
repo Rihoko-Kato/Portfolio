@@ -40,46 +40,122 @@
 
         /* --- 01. HERO (表紙) --- */
         .hero {
-            /* クラゲの画像を背景に設定する場合はここを変更 */
-            background-color: #5B72A4;
-            background-image: linear-gradient(135deg, rgba(91,114,164,0.35) 0%, rgba(131,118,172,0.35) 100%), url('images/表紙クラゲ2.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-blend-mode: overlay;
-            height: 100vh;
+            background: #f6f1ea;
+            min-height: 100vh;
             color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 50px;
+            padding: 0;
             box-sizing: border-box;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            background: #a7b4d6;
+        }
+
+        .hero-bg-main {
+            top: 52px;
+            left: 54px;
+            width: min(67vw, 780px);
+            height: min(57vh, 540px);
+            background: #7d91c4;
+            box-shadow: 0 16px 40px rgba(60, 87, 149, 0.16);
+        }
+
+        .hero-bg-title {
+            top: 248px;
+            left: 108px;
+            width: min(82vw, 920px);
+            height: min(40vh, 320px);
+            background: #93a2cd;
+            opacity: 0.92;
+        }
+
+        .hero-bg-side {
+            top: 92px;
+            right: 34px;
+            width: min(23vw, 220px);
+            height: min(69vh, 670px);
+            background: #95a4cf;
+            opacity: 0.82;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 52px;
+            left: 54px;
+            width: min(67vw, 780px);
+            height: min(57vh, 540px);
+            z-index: 3;
+            overflow: hidden;
+            background: #6f86bc;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            width: 100%;
+            height: 100vh;
         }
 
         .hero-top {
-            font-size: 1.2rem;
+            position: absolute;
+            top: 26px;
+            left: 28px;
+            font-size: 1.05rem;
             letter-spacing: 0.1em;
+            line-height: 1.25;
         }
 
         .hero-title {
-            font-size: 5rem;
+            font-size: clamp(5rem, 10vw, 7.9rem);
             font-weight: 700;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.16em;
             text-align: center;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-            margin-bottom: 50px;
+            text-shadow: 0 10px 0 rgba(242, 156, 56, 0.55), 0 18px 28px rgba(42, 53, 90, 0.16);
+            line-height: 0.9;
         }
 
         .hero-vertical-text {
             writing-mode: vertical-rl;
             position: absolute;
-            right: 10%;
-            top: 20%;
+            right: 72px;
+            top: 78px;
+            font-size: 1.25rem;
+            letter-spacing: 0.35em;
+            color: rgba(255, 255, 255, 0.95);
+            border-left: 1px solid rgba(255, 255, 255, 0.9);
+            padding-left: 22px;
+            height: 70vh;
+        }
+
+        .hero-bottom {
+            position: absolute;
+            left: 156px;
+            bottom: 0;
+            z-index: 5;
+        }
+
+        .hero-year {
+            text-align: right;
             font-size: 1.5rem;
-            letter-spacing: 0.3em;
-            border-left: 1px solid white;
-            padding-left: 20px;
+            margin-bottom: -8px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-portfolio {
+            position: relative;
+            margin: 0;
+            color: white;
+            z-index: 5;
         }
 
         /* --- 02. INDEX --- */
@@ -222,19 +298,29 @@
 <body>
 
     <header class="hero">
-        <div class="hero-top">
-            <p>A SINGLE SPARK</p>
-            <p>IN THE DEEP</p>
-            <p style="margin-top: 10px;">Rihoko Kato</p>
-        </div>
-        
-        <div class="hero-vertical-text">
-            手法を選ばず、地道につくる
+        <div class="hero-bg hero-bg-main"></div>
+        <div class="hero-bg hero-bg-title"></div>
+        <div class="hero-bg hero-bg-side"></div>
+
+        <div class="hero-image">
+            <img src="images/表紙クラゲ2.jpg" alt="表紙クラゲ2">
         </div>
 
-        <div>
-            <p style="text-align: right; font-size: 1.5rem; margin-bottom: -10px;">2026</p>
-            <h1 class="hero-title">PORTFOLIO</h1>
+        <div class="hero-content">
+            <div class="hero-top">
+                <p>A SINGLE SPARK</p>
+                <p>IN THE DEEP</p>
+                <p style="margin-top: 10px; font-size: 1rem;">Rihoko Kato</p>
+            </div>
+
+            <div class="hero-vertical-text">
+                手法を選ばず、<br>地道につくる
+            </div>
+
+            <div class="hero-bottom">
+                <p class="hero-year">2026</p>
+                <h1 class="hero-title hero-portfolio">PORTFOLIO</h1>
+            </div>
         </div>
     </header>
 
